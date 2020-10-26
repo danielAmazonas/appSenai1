@@ -1,3 +1,5 @@
+![](https://komarev.com/ghpvc/?username=danielAmazonas&color=brightgreen)
+
 # Trabalho Prático IONIC - SENAI
 
 Trabalho prático para utilização de uma API ([restcountries.eu](https://https://restcountries.eu/rest/v2/all)) e a criação de um CRUD ([robohash.org](https://robohash.org/)).
