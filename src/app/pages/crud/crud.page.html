@@ -1,0 +1,73 @@
+<ion-header>
+  <app-toolbar title="CRUD"></app-toolbar>
+  <ion-toolbar>
+    <form [formGroup]="form" (ngSubmit)="submitForm()">
+      <ion-row>
+        <ion-col size="6">
+          <ion-item>
+            <ion-input
+              formControlName="firstName"
+              type="text"
+              required
+              placeholder="Primeiro nome"
+              id="firstName"
+            >
+            </ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item>
+            <ion-input
+              formControlName="lastName"
+              type="text"
+              required
+              placeholder="Último nome"
+              id="lastName"
+            >
+            </ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-button
+            color="success"
+            expand="full"
+            type="submit"
+            [disabled]="!form.valid"
+            >{{isEdit ? 'Atualizar' : 'Salvar'}}</ion-button
+          >
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item *ngFor="let user of users; let id = index">
+      <ion-avatar slot="start">
+        <img src="https://robohash.org/{{user.firstName}} {{user.lastName}}" />
+      </ion-avatar>
+      <ion-label>
+        <h2>
+          <ion-text color="dark">{{user.firstName}}</ion-text>
+        </h2>
+        <h3>
+          <ion-text color="medium">{{user.lastName}}</ion-text>
+        </h3>
+      </ion-label>
+      <ion-button slot="end" color="tertiary" (click)="update(id)">
+        <ion-icon name="pencil-outline"></ion-icon>
+      </ion-button>
+      <ion-button
+        slot="end"
+        color="danger"
+        (click)="removeAlert(id)"
+        [disabled]="isRemove"
+      >
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

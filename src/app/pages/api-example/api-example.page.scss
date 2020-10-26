@@ -1,0 +1,41 @@
+.capital {
+  color: lightcoral;
+}
+
+.flags {
+  width: 120px;
+  border-right: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
+}
+
+ion-card-title {
+  color: lightseagreen;
+  font-weight: 900;
+  text-shadow: 1px 1px 2px #222, 1px -1px 2px #222, -1px 1px 2px #222,
+    -1px -1px 2px #222;
+}
+
+p span {
+  color: lightseagreen;
+}
+
+ion-toolbar {
+  margin-top: 10px;
+}
+
+ion-card {
+  background-color: #ddd;
+}
+
+ion-icon {
+  padding: 5px;
+  font-size: 50px;
+}

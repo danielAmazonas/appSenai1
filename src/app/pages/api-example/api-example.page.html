@@ -1,0 +1,44 @@
+<ion-header>
+  <app-toolbar title="API-Example"></app-toolbar>
+
+  <ion-toolbar>
+    <ion-searchbar
+      (ionInput)="search($event.target.value)"
+      (ionClear)="clear()"
+      animated
+      placeholder="Procurar"
+      showCancelButton="focus"
+      cancelButtonText="Cancelar"
+    ></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card *ngFor="let country of countries; let i = index">
+    <div class="flex">
+      <img class="flags" src="../../assets/flags/{{country.alpha3Code.toLowerCase()}}.svg" />
+      <ion-icon name="earth-outline"></ion-icon>
+    </div>
+
+    <ion-card-header>
+      <ion-card-subtitle
+        ><span class="capital">Capital: </span
+        >{{country.capital}}</ion-card-subtitle
+      >
+      <ion-card-title
+        >{{country.translations.br}} - {{country.alpha3Code}}</ion-card-title
+      >
+    </ion-card-header>
+
+    <ion-card-content>
+      <p><span>Região: </span>{{country.region}}</p>
+      <p><span>Sub-região: </span>{{country.subregion}}</p>
+      <p><span>População: </span>{{country.population}}</p>
+      <p><span>Latitude | Longitude: </span>{{country.latlng}}</p>
+      <p><span>Area: </span>{{country.area}}</p>
+      <p><span>Timezones: </span>{{country.timezones}}</p>
+      <p><span>Fronteiras: </span>{{ country.borders}}</p>
+      <p><span>Nome Nativo: </span>{{ country.nativeName}}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
