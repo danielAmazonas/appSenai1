@@ -18,5 +18,5 @@ Para clonar e executar este aplicativo, você precisará do Git instalado no seu
 
 #### 2. Imagens
 
-![posts](https://github.com/danielAmazonas/appSenai1/blob/master/screenshots/img1.png)
-![posts](https://github.com/danielAmazonas/appSenai1/blob/master/screenshots/img2.png)
+![posts](https://github.com/danielAmazonas/appSenai1/blob/main/screenshots/img1.png)
+![posts](https://github.com/danielAmazonas/appSenai1/blob/main/screenshots/img1.png)
