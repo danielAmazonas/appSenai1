@@ -69,7 +69,7 @@ export class CrudPage implements OnInit {
         {
           text: 'Excluir',
           handler: () => {
-            this.remove(this.id);
+            this.remove(id);
           },
         },
       ],

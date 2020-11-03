@@ -23,6 +23,7 @@
               required
               placeholder="Último nome"
               id="lastName"
+              (keyup.enter)="form.valid ? submitForm() : undefined"
             >
             </ion-input>
           </ion-item>
