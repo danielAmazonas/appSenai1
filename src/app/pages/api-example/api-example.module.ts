@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ApiExamplePageRoutingModule } from './api-example-routing.module';
 
 import { ApiExamplePage } from './api-example.page';
-import { ToolbarComponent } from 'src/app/components/toolbar/toolbar.component';
+import { ToolbarModule } from '../../components/toolbar/toolbar.module';
 
 @NgModule({
   imports: [
@@ -15,7 +15,8 @@ import { ToolbarComponent } from 'src/app/components/toolbar/toolbar.component';
     FormsModule,
     IonicModule,
     ApiExamplePageRoutingModule,
+    ToolbarModule,
   ],
-  declarations: [ApiExamplePage, ToolbarComponent],
+  declarations: [ApiExamplePage],
 })
 export class ApiExamplePageModule {}

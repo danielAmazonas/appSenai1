@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { CrudPageRoutingModule } from './crud-routing.module';
 
 import { CrudPage } from './crud.page';
-import { ToolbarComponent } from 'src/app/components/toolbar/toolbar.component';
+import { ToolbarModule } from '../../components/toolbar/toolbar.module';
 
 @NgModule({
   imports: [
@@ -16,7 +16,8 @@ import { ToolbarComponent } from 'src/app/components/toolbar/toolbar.component';
     IonicModule,
     CrudPageRoutingModule,
     ReactiveFormsModule,
+    ToolbarModule,
   ],
-  declarations: [CrudPage, ToolbarComponent],
+  declarations: [CrudPage],
 })
 export class CrudPageModule {}

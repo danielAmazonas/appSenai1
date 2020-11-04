@@ -16,7 +16,10 @@
 <ion-content class="ion-padding">
   <ion-card *ngFor="let country of countries; let i = index">
     <div class="flex">
-      <img class="flags" src="../../assets/flags/{{country.alpha3Code.toLowerCase()}}.svg" />
+      <img
+        class="flags"
+        src="../../assets/flags/{{country.alpha3Code.toLowerCase()}}.svg"
+      />
       <ion-icon name="earth-outline"></ion-icon>
     </div>
 
