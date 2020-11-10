@@ -11,6 +11,7 @@
               required
               placeholder="Primeiro nome"
               id="firstName"
+              (keyup.enter)="form.valid ? submitForm() : undefined"
               autofocus
             >
             </ion-input>
@@ -41,15 +42,77 @@
           >
         </ion-col>
       </ion-row>
+
+      <ion-row *ngIf="isEdit === true">
+        <ion-col size="12">
+          <ion-button color="tertiary" expand="full" (click)="cancelForm()"
+            >Cancelar</ion-button
+          >
+        </ion-col>
+      </ion-row>
     </form>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
+  <ion-label>
+    <h2 class="type-faces">Tipos de Rostos</h2>
+  </ion-label>
+  <ion-list>
+    <ion-radio-group value="1" (ionChange)="changeFace($event)">
+      <ion-item lines="none" class="robot1">
+        <ion-label>Robot</ion-label>
+        <ion-radio
+          mode="md"
+          slot="start"
+          color="tertiary"
+          value="1"
+        ></ion-radio>
+      </ion-item>
+      <ion-item lines="none" class="robot2">
+        <ion-label>Robot 2</ion-label>
+        <ion-radio
+          mode="md"
+          slot="start"
+          color="tertiary"
+          value="3"
+        ></ion-radio>
+      </ion-item>
+      <ion-item lines="none" class="bio-cyborg">
+        <ion-label>Bio Cyborg</ion-label>
+        <ion-radio
+          mode="md"
+          slot="start"
+          color="tertiary"
+          value="2"
+        ></ion-radio>
+      </ion-item>
+      <ion-item lines="none" class="cats">
+        <ion-label>Cats</ion-label>
+        <ion-radio
+          mode="md"
+          slot="start"
+          color="tertiary"
+          value="4"
+        ></ion-radio>
+      </ion-item>
+      <ion-item lines="none" class="human">
+        <ion-label>Humano</ion-label>
+        <ion-radio
+          mode="md"
+          slot="start"
+          color="tertiary"
+          value="5"
+        ></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
   <ion-list>
     <ion-item *ngFor="let user of users; let id = index">
       <ion-avatar slot="start">
-        <img src="https://robohash.org/{{user.firstName}} {{user.lastName}}" />
+        <img
+          src="https://robohash.org/{{user.firstName}} {{user.lastName}}?set=set{{type}}"
+        />
       </ion-avatar>
       <ion-label>
         <h2>

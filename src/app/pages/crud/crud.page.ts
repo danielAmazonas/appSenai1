@@ -14,6 +14,7 @@ export class CrudPage implements OnInit {
   public users: Array<any> = [];
   public isEdit: boolean = false;
   public isRemove: boolean = false;
+  public type: number = 1;
   constructor(
     public formBuilder: FormBuilder,
     public alertController: AlertController,
@@ -31,6 +32,11 @@ export class CrudPage implements OnInit {
 
   public async getUsers() {
     this.users = await this.crudService.getAll();
+  }
+
+  public async cancelForm() {
+    document.querySelector('form').reset();
+    this.isEdit = false;
   }
 
   public async submitForm() {
@@ -75,5 +81,9 @@ export class CrudPage implements OnInit {
       ],
     });
     await alert.present();
+  }
+
+  public changeFace(event) {
+    this.type = event.detail.value;
   }
 }
