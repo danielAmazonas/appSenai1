@@ -45,6 +45,7 @@ export class CrudPage implements OnInit {
     await this.getUsers();
     this.isEdit = false;
     this.isRemove = false;
+    this.id = null;
   }
 
   public async update(id: number) {
